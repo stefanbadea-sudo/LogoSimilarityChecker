@@ -1,0 +1,39 @@
+
+[START] processing 4384 domains
+
+PHASE 1: LOGO EXTRACTION
+ Progress: 500/4384 | Success: 500
+ Progress: 1000/4384 | Success: 1000
+ Progress: 1500/4384 | Success: 1500
+ Progress: 2000/4384 | Success: 2000
+ Progress: 2500/4384 | Success: 2500
+ Progress: 3000/4384 | Success: 3000
+ Progress: 3500/4384 | Success: 3500
+ Progress: 4000/4384 | Success: 4000
+
+PHASE 2: GEOMETRIC ANALYSIS for 4384 images
+
+ Extract features: 500/4384
+ Extract features: 1000/4384
+ Extract features: 1500/4384
+ Extract features: 2000/4384
+ Extract features: 2500/4384
+ Extract features: 3000/4384
+ Extract features: 3500/4384
+ Extract features: 4000/4384
+
+PHASE 3: GROUPING 3215 elements
+
+Grouping: 0/3215
+Grouping: 500/3215
+Grouping: 1000/3215
+Grouping: 1500/3215
+Grouping: 2000/3215
+Grouping: 2500/3215
+Grouping: 3000/3215
+
+
+Time: 410.1s
+Processed images: 4384
+Removed images (blacklisted): 266
+Total groups: 1641
