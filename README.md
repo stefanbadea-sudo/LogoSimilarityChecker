@@ -4,18 +4,20 @@
 ---
 ## Overview
 
-This project tackles the problem of **logo similarity clustering** across a dataset 
-consisting of 4,384 company websites without using traditional ML clustering algorithms 
-like DBSCAN or k-means. Instead, it employs a **cascade filtering pipeline** inspired by 
+This project focuses on the problem of **logo similarity clustering** across a dataset 
+consisting of 4,000+ company websites without using traditional ML clustering algorithms 
+like DBSCAN or k-means. 
+
+Instead, it employs a **cascade filtering pipeline** inspired by 
 mathematical signal processing and computer vision techniques.
 
 **Key Achievement**: > 99.0% extraction success rate with 1,639 distinct groups identified.
 
 **Key Insights:**
-- Logos are **perceptually simple** but mathematically complex
-- Humans recognize logos through multiple channels: shape, color, spatial layout
-- The problem is essentially a **multi-dimensional similarity search**
-- Traditional ML clustering treats features as black boxes; we need interpretable filters
+- Logos are **perceptually simple** but mathematically complex.
+- Humans recognize logos through multiple channels: shape, color, spatial layout.
+- The problem is essentially a **multi-dimensional similarity search**.
+- Traditional ML clustering treats features as black boxes; we need interpretable filters.
 
 ### Design
 > "Rather than asking 'are these logos the same?', ask 'in how many ways are they different?'"
@@ -46,7 +48,7 @@ matches progressively, inspired by:
 
 3. **Google Favicon Fallback**
    - `https://www.google.com/s2/favicons?domain={domain}&sz=128`
-   - Google's CDN provides coverage as ultimate fallback
+   - Google's CDN provides coverage as fallback
 
 **Heuristic Junk Filtering** (applied during extraction):
 - **Aspect Ratio Check**: Reject if `ratio > 5` or `ratio < 0.2` (banners/slim badges)
@@ -132,7 +134,8 @@ inliers = np.sum(mask) >= 12
 ### Phase 3: Union-Find Clustering
 
 I used union find (disjoint set) data structure to efficiently 
-cluster logos based on similarity relationships established by the cascade filters.
+cluster logos based on similarity relationships established by the 
+cascade filters.
 
 ```python
 def find(i):
@@ -174,7 +177,8 @@ Multi-Member Groups:        300    (18.3%)
 Largest Cluster:            222 domains (AAMCO group)
 ```
 
-### Top 10 Largest Groups
+### Top 10 Largest Groups identified in the Dataset
+
 1. **AAMCO** 222 domains
 2. **Mazda** 102 domains
 3. **Culligan** 73 domains
@@ -198,7 +202,7 @@ Clustering:                 95s  (24.0%)
 
 ---
 
-### Computational Complexity Comparison
+### Computational Complexity
 
 | Dataset Size    | Brute Force | Union-Find | Speedup      |
 |-----------------|-------------|------------|--------------|
@@ -207,7 +211,8 @@ Clustering:                 95s  (24.0%)
 | 100,000         | 173 h       | 2.5 h      | 69x          |
 | 1,000,000       | 19,841 h    | 25 h       | 793x         |
 
-At current scale, extraction dominates. At larger scales, Union-Find becomes critical.
+At current scale, extraction dominates. At larger scales, 
+implementing Union-Find becomes critical.
 
 ---
 
