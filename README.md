@@ -177,19 +177,9 @@ Multi-Member Groups:        300    (18.3%)
 Largest Cluster:            222 domains (AAMCO group)
 ```
 
-### Top 10 Largest Groups identified in the Dataset
+### Top 15 Largest Groups identified in the Dataset
 
-1. **AAMCO** 222 domains
-2. **Mazda** 102 domains
-3. **Culligan** 73 domains
-4. **Kia** 49 domains
-5. **B. Braun** 35 domains
-6. **Nestlé** 32 domains
-7. **MEDEF** 31 domains
-8. **Spitex** 29 domains
-9. **Airbnb** 29 domains
-10. **Veolia** 28 domains
-
+![Top 15 Clusters](assets/top_clusters.png)
 
 ### Performance Metrics
 ```
