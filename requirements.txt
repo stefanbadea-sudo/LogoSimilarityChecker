@@ -1,0 +1,18 @@
+# Logo Similarity Clustering Dependencies
+
+# Image Processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+imagehash>=4.3.1
+
+# Numerical Computing
+numpy>=1.24.0
+
+# Data Processing
+pandas>=2.0.0
+pyarrow>=12.0.0
+
+# Web Scraping & HTTP
+beautifulsoup4>=4.12.0
+requests>=2.31.0
+urllib3>=2.0.0
